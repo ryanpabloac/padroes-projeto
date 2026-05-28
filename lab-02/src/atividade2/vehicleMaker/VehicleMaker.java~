@@ -1,0 +1,8 @@
+package atividade2.vehicleMaker;
+
+import atividade2.Vehicle;
+
+public interface VehicleMaker {
+
+    public Vehicle makeVehicle(String model);
+}
