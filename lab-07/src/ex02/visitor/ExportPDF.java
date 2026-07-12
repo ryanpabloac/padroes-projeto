@@ -4,24 +4,24 @@ import ex02.elementos.Image;
 import ex02.elementos.Paragraph;
 import ex02.elementos.Table;
 
-public class ExportHTML implements DocVisitor {
+public class ExportPDF implements DocVisitor {
     @Override
     public void visit(Paragraph p) {
-        System.out.println("<p> \n"+ p.getText() + "\n</p>");
+        System.out.println(p.getText() + "\n");
     }
 
     @Override
     public void visit(Table t) {
-        System.out.println("<table>");
         for(String s : t.getColumns()) {
-            System.out.println("<tr>" + s + "</tr>");
+            System.out.print(s + " | ");
         }
-        System.out.println("</table>");
+
+        System.out.println();
     }
 
     @Override
     public void visit(Image i) {
-        System.out.println("<img>\n" + i.getImg() + "\n</img>");
+        System.out.println("IMAGEM:" + i.getImg());
     }
 
 }
